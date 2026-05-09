@@ -1,69 +1,49 @@
-
 <!DOCTYPE html>
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>손말잇기 | 수화 학습 & 퀴즈</title>
+    <title>수려 | 수어 학습 & 퀴즈</title>
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.3/themes/base/jquery-ui.css" />
     <link rel="stylesheet" href="./styles.css" />
   </head>
+
   <body>
-    <!-- 메인 학습 페이지 -->
     <div id="app">
       <section id="main-page" class="page active">
-        <!-- 상단: 로고 + 검색 -->
         <header class="top-header">
           <div class="container header-inner">
-            <h1 class="brand">손말잇기</h1>
+            <h1 class="brand">수려</h1>
+
             <form id="search-form" class="search-form">
-              <input id="search-input" type="text" placeholder="수화 단어를 검색하세요..." />
+              <input id="search-input" type="text" placeholder="수어 단어를 검색하세요..." />
               <button type="submit">검색</button>
             </form>
           </div>
         </header>
 
-
-        <!-- 본문: 카테고리 필터 + 추천 수화 카드 목록 -->
         <main class="container main-content">
           <div id="category-filters" class="category-filters"></div>
           <div id="sign-grid" class="sign-grid"></div>
         </main>
-        <!-- (옵션) 추천 학습 순서 카드 -->
-        <!-- <article class="learning-order-card" aria-label="추천 학습 순서">
-          <h2>추천 학습 순서</h2>
-          <ol>
-            <li>안녕하세요</li>
-            <li>감사합니다</li>
-            <li>괜찮다</li>
-            <li>만나다</li>
-            <li>미안</li>
-          </ol>
-        </article> -->
 
-        <!-- 퀴즈 페이지 이동 버튼 -->
         <button id="start-quiz-btn" class="fab">시험 보기</button>
       </section>
     </div>
 
-    <!-- 수화 영상 재생 모달 -->
     <div id="video-modal" class="modal hidden">
       <div class="modal-content">
         <div class="modal-head">
-          <h3 id="modal-title">수화 영상</h3>
+          <h3 id="modal-title">수어 영상</h3>
           <button id="close-modal-btn" class="close-btn">×</button>
         </div>
-        <video id="learn-video" controls>
-          <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4" />
-        </video>
+        <video id="learn-video" controls></video>
       </div>
     </div>
 
-    <!-- 라이브러리/앱 스크립트 -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://code.jquery.com/ui/1.13.3/jquery-ui.min.js"></script>
     <script src="./data.js"></script>
     <script src="./app.js"></script>
   </body>
 </html>
-  
