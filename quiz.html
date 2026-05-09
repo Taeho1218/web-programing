@@ -3,40 +3,35 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>손말잇기 | 수화 테스트</title>
+    <title>수려:수어 테스트</title>
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.3/themes/base/jquery-ui.css" />
     <link rel="stylesheet" href="./styles.css" />
   </head>
+
   <body>
-    <!-- 퀴즈 페이지 -->
     <div id="app">
       <section id="quiz-page" class="page active">
-        <!-- 상단: 메인으로 돌아가기 + 제목 -->
         <header class="top-header">
           <div class="container header-inner quiz-header">
             <button id="back-main-btn" class="ghost-btn">돌아가기</button>
-            <h1 class="brand">수화 테스트</h1>
+            <h1 class="brand">수어 테스트</h1>
             <div class="spacer"></div>
           </div>
         </header>
 
-        <!-- 본문: 문제 안내 + 카메라 인식 영역 -->
         <main class="container quiz-layout">
           <section class="quiz-top">
-            <!-- 현재 문제 정보 -->
             <p id="question-meta" class="question-meta"></p>
             <h2 id="question-text" class="question-text"></h2>
             <div id="question-letter" class="question-letter"></div>
           </section>
 
           <section class="quiz-bottom">
-            <!-- 카메라 제어 -->
             <div class="camera-header">
               <h3>실시간 카메라</h3>
               <button id="toggle-camera-btn" class="camera-btn">카메라 켜기</button>
             </div>
 
-            <!-- 카메라 영상 + 오버레이 + 상태 배지 -->
             <div class="camera-stage">
               <video id="camera-video" autoplay playsinline></video>
               <canvas id="overlay-canvas"></canvas>
@@ -44,20 +39,17 @@
               <div id="detect-status" class="detect-status hidden">손 감지됨 ✓</div>
             </div>
 
-            <!-- 사용자 액션 버튼 -->
             <div class="quiz-actions">
               <button id="hint-btn" class="secondary">힌트 보기</button>
               <button id="skip-btn" class="primary">넘어가기</button>
             </div>
 
-            <!-- 안내/정답/오류 피드백 -->
             <div id="feedback-bar" class="feedback-bar hidden"></div>
           </section>
         </main>
       </section>
     </div>
 
-    <!-- 퀴즈 종료 결과 모달 -->
     <div id="result-modal" class="modal hidden">
       <div class="modal-content result">
         <h2>테스트 완료!</h2>
@@ -71,16 +63,14 @@
       </div>
     </div>
 
-    <!-- 인식 라이브러리 -->
     <script src="https://cdn.jsdelivr.net/npm/@mediapipe/holistic/holistic.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@mediapipe/pose/pose.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.22.0/dist/tf.min.js" crossorigin="anonymous"></script>
-    <script src="../test/hand_sign_recognizer.js"></script>
+    <script src="./hand_sign_recognizer.js"></script>
 
-    <!-- 앱 스크립트 -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://code.jquery.com/ui/1.13.3/jquery-ui.min.js"></script>
     <script src="./data.js"></script>
